@@ -94,9 +94,9 @@ public class ListaNumeros
      */
     public boolean estaElemento(int numero) 
     {
-        boolean correcto = true;
+        boolean correcto = false;
         int i = pos;
-        while(i != 0 || correcto != true){
+        while(i != 0 && correcto != true){
             correcto = numeros[pos] == numero;
             i--;
         }
@@ -114,13 +114,13 @@ public class ListaNumeros
     {
         String str = " | ";
         if (estaVacia() == true){
-            str = str + "| |";
+            str = str + "|";
         }
-        else{
-            for(int i = pos - 1; i = 0; i--){
-                str = str + numeros[pos];
-            }
-        }
+        // else{
+            // for(int i = 0; i >= pos; i++){
+                // str = str + numeros[pos];
+            // }
+        // }
         return str;
     }
 
@@ -149,22 +149,21 @@ public class ListaNumeros
             throw new RuntimeException("Nº impar de elementos en el array, añada uno más");
         }
         else{
-        int aux = 0;
-        for(int j = 0; j = arraux.length; j =+ 2){
-            aux = aux + numeros[i];
-        }
-        int[] arraux = new int[aux];
-        aux = 0;
-        for(int i = 0; i = arraux.length; i =+ 2){
-            
-            for(int j = 0; j = ; j++){
-                arraux[aux] = numeros[i];
+            int aux = 0;
+            for(int i = 0; i >= numeros.length - 1; i =+ 2){
+                aux = aux + numeros[i];
             }
-
+            int[] arraux = new int[aux];
+            aux = 0;
+            for(int i = 0; i == arraux.length; i =+ 2){
+                aux = numeros[i];
+                i++;
+                for(int j = 0; j >= aux; j++){
+                    arraux[aux] = numeros[i];
+                }
+            }
+            return arraux;
         }
-        
-        
-        return null;
     }
 
     /**
